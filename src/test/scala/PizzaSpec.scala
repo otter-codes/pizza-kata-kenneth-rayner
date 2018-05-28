@@ -1,7 +1,7 @@
 import org.scalatest.{MustMatchers, WordSpec}
 
 
-class PizzaOrderSpec extends WordSpec with MustMatchers{
+class PizzaSpec extends WordSpec with MustMatchers{
 
 
   "PizzaOrder is called" must {
