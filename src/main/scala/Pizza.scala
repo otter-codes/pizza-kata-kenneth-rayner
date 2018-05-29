@@ -3,13 +3,15 @@ object Pizza {
   def pizzaOrder(numApprentices: Int, individualOrders: List[String]): String = {
 
     val numPizzasToOrder = math.ceil(individualOrders.map(fractionToDouble).sum).toInt
-    val leftOverSlices = ((numPizzasToOrder - individualOrders.map(fractionToDouble).sum) * 8).toInt
+    val leftOverSlicesCalc = ((numPizzasToOrder - individualOrders.map(fractionToDouble).sum) * 8).toInt
+    val leftOverSlices = if (leftOverSlicesCalc == 0) "no" else leftOverSlicesCalc
+
 
     val pluralPizzas = if (numPizzasToOrder > 1) "s" else ""
     val pluralApprentices = if (numApprentices > 1) "s" else ""
-    val pluralLeftOverSlices = if (leftOverSlices !=1) "s" else ""
+    val pluralLeftOverSlices = if (leftOverSlicesCalc !=1) "s" else ""
     val leftOverSlicesString = s" and will have $leftOverSlices left over slice$pluralLeftOverSlices"
-//    val leftOverSlicesStringReveal = if (leftOverSlices > 0) leftOverSlicesString else ""
+
 
     s"To feed $numApprentices hungry apprentice$pluralApprentices, I need $numPizzasToOrder pizza$pluralPizzas$leftOverSlicesString"
 
