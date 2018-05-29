@@ -2,8 +2,8 @@ object Pizza {
 
   def pizzaOrder(numApprentices: Int, individualOrders: List[String]): String = {
 
-    val numPizzasToOrder = math.ceil(individualOrders.map(fractionToDouble).sum).toInt
-    val leftOverSlicesCalc = ((numPizzasToOrder - individualOrders.map(fractionToDouble).sum) * 8).toInt
+    val numPizzasToOrder = math.ceil(individualOrders.map(x => fractionToDouble(x)).sum).toInt
+    val leftOverSlicesCalc = ((numPizzasToOrder - individualOrders.map(x => fractionToDouble(x)).sum) * 8).toInt
     val leftOverSlices = if (leftOverSlicesCalc == 0) "no" else leftOverSlicesCalc
 
 
