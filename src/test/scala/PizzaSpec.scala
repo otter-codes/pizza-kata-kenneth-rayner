@@ -8,15 +8,15 @@ class PizzaSpec extends WordSpec with MustMatchers{
 
     "return the correct number of pizzas for 1 apprentice" in {
 
-      Pizza.pizzaOrder(1,List("1")) mustEqual "To feed 1 hungry apprentice, I need 1 pizza and will have 0 left over slices"
+      Pizza.pizzaOrder(1,List("1")) mustEqual "To feed 1 hungry apprentice, I need 1 pizza and will have no left over slices"
     }
     "return the correct number of pizzas for more than 1 apprentices" in {
 
-      Pizza.pizzaOrder(2,List("1","1")) mustEqual "To feed 2 hungry apprentices, I need 2 pizzas and will have 0 left over slices"
+      Pizza.pizzaOrder(2,List("1","1")) mustEqual "To feed 2 hungry apprentices, I need 2 pizzas and will have no left over slices"
     }
     "return the correct number of pizzas for many apprentices" in {
 
-      Pizza.pizzaOrder(6,List("1","1","1","1","1","1")) mustEqual "To feed 6 hungry apprentices, I need 6 pizzas and will have 0 left over slices"
+      Pizza.pizzaOrder(6,List("1","1","1","1","1","1")) mustEqual "To feed 6 hungry apprentices, I need 6 pizzas and will have no left over slices"
     }
     "return the correct number of pizzas for 1 apprentice a have some left over slices" in {
 
